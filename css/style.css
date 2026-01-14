@@ -5,12 +5,19 @@
   font-family: 'Inter', sans-serif;
 }
 
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
 body {
   background: linear-gradient(180deg, #f4fbfa, #f5f3ff);
   color: #333;
+  overflow-x: hidden;
 }
 
-/* HEADER */
+/* ================= HEADER ================= */
 .header {
   background: linear-gradient(135deg, #2ec4b6, #90dbf4);
   color: #073b4c;
@@ -22,16 +29,17 @@ body {
   font-size: 2.8rem;
 }
 
-/* NAVBAR */
+/* ================= NAVBAR ================= */
 .navbar {
   background: rgba(255,255,255,0.95);
   display: flex;
   justify-content: center;
+  flex-wrap: wrap;
   gap: 22px;
   padding: 14px;
   position: sticky;
   top: 0;
-  z-index: 10;
+  z-index: 100;
   box-shadow: 0 6px 18px rgba(0,0,0,0.08);
 }
 
@@ -45,8 +53,9 @@ body {
   color: #2ec4b6;
 }
 
-/* SLIDER */
+/* ================= SLIDER ================= */
 .slider {
+  width: 100%;
   overflow: hidden;
   height: 360px;
 }
@@ -54,7 +63,7 @@ body {
 .slides {
   display: flex;
   width: 400%;
-  animation: slide 32s infinite ease-in-out;
+  animation: slide 40s infinite ease-in-out;
 }
 
 .slides img {
@@ -63,20 +72,20 @@ body {
   object-fit: cover;
 }
 
-/* MUCH SLOWER SLIDE */
+/* slow + smooth */
 @keyframes slide {
   0% { transform: translateX(0); }
-  20% { transform: translateX(0); }
-  25% { transform: translateX(-100%); }
-  45% { transform: translateX(-100%); }
-  50% { transform: translateX(-200%); }
-  70% { transform: translateX(-200%); }
-  75% { transform: translateX(-300%); }
-  95% { transform: translateX(-300%); }
+  22% { transform: translateX(0); }
+  27% { transform: translateX(-100%); }
+  47% { transform: translateX(-100%); }
+  52% { transform: translateX(-200%); }
+  72% { transform: translateX(-200%); }
+  77% { transform: translateX(-300%); }
+  97% { transform: translateX(-300%); }
   100% { transform: translateX(0); }
 }
 
-/* SECTIONS */
+/* ================= SECTIONS ================= */
 .section {
   padding: 60px 20px;
   max-width: 1200px;
@@ -96,7 +105,7 @@ body {
   color: #3a0ca3;
 }
 
-/* CARDS */
+/* ================= CARDS ================= */
 .cards {
   display: flex;
   gap: 28px;
@@ -114,7 +123,7 @@ body {
 }
 
 .card:hover {
-  transform: translateY(-10px);
+  transform: translateY(-8px);
 }
 
 .card img {
@@ -129,14 +138,14 @@ body {
   margin-bottom: 12px;
 }
 
-/* TESTIMONIALS */
+/* ================= TESTIMONIAL ================= */
 .testimonial-slider {
   overflow: hidden;
 }
 
 .testimonial-track {
   display: flex;
-  animation: testimonialScroll 24s infinite ease-in-out;
+  animation: testimonialScroll 30s infinite ease-in-out;
 }
 
 .testimonial {
@@ -148,14 +157,13 @@ body {
   box-shadow: 0 8px 22px rgba(0,0,0,0.08);
 }
 
-/* SLOW TESTIMONIAL */
 @keyframes testimonialScroll {
   0% { transform: translateX(0); }
   50% { transform: translateX(-50%); }
   100% { transform: translateX(0); }
 }
 
-/* BUTTON */
+/* ================= BUTTON ================= */
 .btn {
   display: inline-block;
   margin-top: 18px;
@@ -171,7 +179,7 @@ body {
   opacity: 0.9;
 }
 
-/* MAP */
+/* ================= MAP ================= */
 iframe {
   width: 100%;
   height: 260px;
@@ -179,7 +187,7 @@ iframe {
   border-radius: 16px;
 }
 
-/* FOOTER */
+/* ================= FOOTER ================= */
 .footer {
   background: linear-gradient(135deg, #5e60ce, #4ea8de);
   color: white;
@@ -188,7 +196,7 @@ iframe {
   margin-top: 50px;
 }
 
-/* WHATSAPP */
+/* ================= WHATSAPP ================= */
 .whatsapp {
   position: fixed;
   bottom: 22px;
@@ -199,11 +207,46 @@ iframe {
   border-radius: 50%;
   font-size: 28px;
   box-shadow: 0 6px 18px rgba(0,0,0,0.25);
+  z-index: 200;
 }
 
-/* RESPONSIVE */
+/* ================= MOBILE FIX ================= */
 @media (max-width: 768px) {
+
+  .header h1 {
+    font-size: 2rem;
+  }
+
+  .slider {
+    height: 240px;
+  }
+
   .slides img {
-    height: 260px;
+    height: 240px;
+  }
+
+  .cards {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .card {
+    width: 100%;
+    max-width: 340px;
+  }
+
+  .title {
+    font-size: 1.8rem;
+  }
+
+  iframe {
+    height: 220px;
+  }
+
+  .whatsapp {
+    bottom: 16px;
+    right: 16px;
+    font-size: 24px;
+    padding: 14px;
   }
 }
