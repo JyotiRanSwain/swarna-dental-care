@@ -12,10 +12,21 @@ img {
   display: block;
 }
 
+/* ================= BODY + CUSTOM TOOTH CURSOR ================= */
 body {
   background: linear-gradient(180deg, #f4fbfa, #f5f3ff);
   color: #333;
   overflow-x: hidden;
+
+  /* Custom cursor with fallback */
+  cursor: url("../images/tooth-cursor.png"), auto;
+}
+
+/* Cursor for clickable elements */
+a,
+button,
+.btn {
+  cursor: url("../images/tooth-cursor.png"), pointer;
 }
 
 /* ================= HEADER ================= */
@@ -67,7 +78,7 @@ body {
 
 /* ================= NAVBAR ================= */
 .navbar {
-  background: rgba(255,255,255,0.95);
+  background: rgba(255, 255, 255, 0.95);
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
@@ -76,7 +87,7 @@ body {
   position: sticky;
   top: 0;
   z-index: 100;
-  box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
 }
 
 .navbar a {
@@ -89,7 +100,7 @@ body {
   color: #2ec4b6;
 }
 
-/* ================= SLIDER ================= */
+/* ================= IMAGE SLIDER ================= */
 .slider {
   width: 100%;
   overflow: hidden;
@@ -128,7 +139,7 @@ body {
 }
 
 .light {
-  background: white;
+  background: #ffffff;
   border-radius: 24px;
   margin-top: 30px;
 }
@@ -143,7 +154,7 @@ body {
 /* ================= NOTICE BAR ================= */
 .notice-bar {
   background: linear-gradient(90deg, #4f9cff, #7cc6ff);
-  color: white;
+  color: #ffffff;
   text-align: center;
   padding: 14px 20px;
   font-size: 1rem;
@@ -151,7 +162,7 @@ body {
   border-radius: 12px;
   margin: 30px auto;
   max-width: 1100px;
-  box-shadow: 0 6px 18px rgba(0,0,0,0.12);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12);
 }
 
 /* ================= CARDS ================= */
@@ -163,11 +174,11 @@ body {
 }
 
 .card {
-  background: white;
+  background: #ffffff;
   padding: 22px;
   width: 280px;
   border-radius: 18px;
-  box-shadow: 0 12px 28px rgba(0,0,0,0.08);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.08);
   transition: transform 0.3s ease;
 }
 
@@ -198,11 +209,11 @@ body {
 
 .testimonial {
   min-width: 320px;
-  background: white;
+  background: #ffffff;
   padding: 22px;
   margin: 0 15px;
   border-radius: 16px;
-  box-shadow: 0 8px 22px rgba(0,0,0,0.08);
+  box-shadow: 0 8px 22px rgba(0, 0, 0, 0.08);
 }
 
 @keyframes testimonialScroll {
@@ -217,7 +228,7 @@ body {
   margin-top: 18px;
   padding: 12px 28px;
   background: linear-gradient(135deg, #48cae4, #5e60ce);
-  color: white;
+  color: #ffffff;
   text-decoration: none;
   border-radius: 30px;
   font-weight: 600;
@@ -234,10 +245,69 @@ iframe {
 /* ================= FOOTER ================= */
 .footer {
   background: linear-gradient(135deg, #5e60ce, #4ea8de);
-  color: white;
+  color: #ffffff;
   text-align: center;
-  padding: 22px;
-  margin-top: 50px;
+  padding: 35px 20px;
+  margin-top: 60px;
+}
+
+.footer-inner {
+  max-width: 1100px;
+  margin: auto;
+}
+
+.footer-title {
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 6px;
+}
+
+.footer-sub {
+  font-size: 0.9rem;
+  opacity: 0.9;
+  margin-bottom: 16px;
+}
+
+.footer-powered {
+  margin-top: 6px;
+  font-size: 0.75rem;
+  opacity: 0.85;
+}
+
+.footer-powered a {
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.footer-powered a:hover {
+  text-decoration: underline;
+}
+
+/* ================= SOCIAL ICONS ================= */
+.social-links {
+  display: flex;
+  justify-content: center;
+  gap: 18px;
+}
+
+.social-links a {
+  width: 42px;
+  height: 42px;
+  background: rgba(255, 255, 255, 0.15);
+  color: #ffffff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  transition: all 0.3s ease;
+}
+
+.social-links a:hover {
+  background: #ffffff;
+  color: #4ea8de;
+  transform: translateY(-3px);
 }
 
 /* ================= WHATSAPP ================= */
@@ -246,11 +316,11 @@ iframe {
   bottom: 22px;
   right: 22px;
   background: #25d366;
-  color: white;
+  color: #ffffff;
   padding: 16px;
   border-radius: 50%;
   font-size: 28px;
-  box-shadow: 0 6px 18px rgba(0,0,0,0.25);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.25);
   z-index: 200;
 }
 
