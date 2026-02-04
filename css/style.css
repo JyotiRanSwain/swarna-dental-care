@@ -156,8 +156,8 @@ img {
 
 /* ================= NOTICE BAR ================= */
 .notice-bar {
-  background: linear-gradient(90deg, #ff6b6b, #feca57, #1dd1a1);
-  color: #fff;
+  background: linear-gradient(90deg, #ff8fab, #ff4d6d, #ff8fab);
+  color: #ffffff;
   text-align: center;
   padding: 14px 20px;
   font-size: 1rem;
