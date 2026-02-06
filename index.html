@@ -1,273 +1,667 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <!-- BASIC -->
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Swarna Dental Care | Best Dental Clinic in Bhubaneswar</title>
+    <!-- BASIC -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Swarna Dental Care | Best Dental Clinic in Bhubaneswar</title>
+    
+    <!-- SEO META -->
+    <meta name="description" content="Swarna Dental Care is a modern dental clinic in Baramunda, Bhubaneswar offering painless treatment, teeth cleaning, dental checkups and cosmetic dentistry.">
+    <meta name="keywords" content="Swarna Dental Care, Dental Clinic in Bhubaneswar, Dentist near Baramunda, Teeth Cleaning, Dental Checkup, Cosmetic Dentistry">
+    <meta name="author" content="Swarna Dental Care">
+    <meta name="robots" content="index, follow">
+    
+    <!-- GOOGLE SEARCH CONSOLE VERIFICATION -->
+    <meta name="google-site-verification" content="ca32ca0c05554428" />
+    
+    <!-- OPEN GRAPH (WhatsApp / Facebook Preview) -->
+    <meta property="og:title" content="Swarna Dental Care – Trusted Dental Clinic in Bhubaneswar">
+    <meta property="og:description" content="Painless, modern and affordable dental treatments at Swarna Dental Care, Baramunda, Bhubaneswar.">
+    <meta property="og:image" content="https://jyotiranswain.github.io/swarna-dental-care/images/clinic1.jpg">
+    <meta property="og:url" content="https://jyotiranswain.github.io/swarna-dental-care/">
+    <meta property="og:type" content="website">
+    
+    <!-- GOOGLE FONT -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&family=Playfair+Display:wght@700;900&display=swap" rel="stylesheet">
+    
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
-  <!-- SEO META -->
-  <meta name="description" content="Swarna Dental Care is a modern dental clinic in Baramunda, Bhubaneswar offering painless treatment, teeth cleaning, dental checkups and cosmetic dentistry.">
-  <meta name="keywords" content="Swarna Dental Care, Dental Clinic in Bhubaneswar, Dentist near Baramunda, Teeth Cleaning, Dental Checkup, Cosmetic Dentistry">
-  <meta name="author" content="Swarna Dental Care">
-  <meta name="robots" content="index, follow">
+    <!-- FAVICON -->
+    <link rel="icon" type="image/png" href="images/logo.png">
 
-  <!-- GOOGLE SEARCH CONSOLE VERIFICATION -->
-  <meta name="google-site-verification" content="ca32ca0c05554428" />
-
-  <!-- OPEN GRAPH (WhatsApp / Facebook Preview) -->
-  <meta property="og:title" content="Swarna Dental Care – Trusted Dental Clinic in Bhubaneswar">
-  <meta property="og:description" content="Painless, modern and affordable dental treatments at Swarna Dental Care, Baramunda, Bhubaneswar.">
-  <meta property="og:image" content="https://jyotiranswain.github.io/swarna-dental-care/images/clinic1.jpg">
-  <meta property="og:url" content="https://jyotiranswain.github.io/swarna-dental-care/">
-  <meta property="og:type" content="website">
-
-  <!-- GOOGLE FONT -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
-
-  <!-- ICONS -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-
-  <!-- CSS -->
-  <link rel="stylesheet" href="css/style.css">
-
-  <!-- AOS -->
-  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css">
+    
+    <!-- AOS Animation Library -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <link rel="stylesheet" href="styles.css">
 </head>
-
 <body>
-
-<!-- HEADER -->
-<header class="header">
-  <nav class="navbar">
-    <div class="logo-area">
-      <img src="images/logo.png" alt="Swarna Dental Care Logo" class="logo">
-      <span class="brand">Swarna Dental Care</span>
+    <!-- Preloader -->
+    <div class="preloader" id="preloader">
+        <div class="preloader-content">
+            <div class="tooth-loader">
+                <i class="fas fa-tooth"></i>
+            </div>
+            <p>Loading Excellence...</p>
+        </div>
     </div>
 
-    <ul class="nav-links">
-      <li><a href="#about">About</a></li>
-      <li><a href="#services">Services</a></li>
-      <li><a href="#testimonials">Testimonials</a></li>
-      <li><a href="#hours">Hours</a></li>
-      <li><a href="#appointment">Appointment</a></li>
-      <li><a href="#location">Location</a></li>
-    </ul>
+    <!-- Cursor -->
+    <div class="cursor-dot" id="cursorDot"></div>
+    <div class="cursor-outline" id="cursorOutline"></div>
 
-    <a href="tel:+918093974393" class="call-btn">📞 Call</a>
-  </nav>
-</header>
-
-<!-- HERO -->
-<section class="hero">
-  <div class="hero-overlay" data-aos="fade-up">
-    <h1>Swarna Dental Care</h1>
-    <p>Trusted dental clinic in Bhubaneswar since 2016</p>
-
-    <div class="hero-buttons">
-      <a href="#appointment" class="btn primary">Book Appointment</a>
-      <a href="tel:+918093974393" class="btn secondary">Call Now</a>
-    </div>
-  </div>
-</section>
-
-<!-- NOTICE BAR -->
-<section class="notice-bar" data-aos="zoom-in">
-  <p>❤️ Spreading smiles this <strong>Valentine’s Day</strong>! Wishing you and your loved ones healthy teeth and happy hearts 💖</p>
-</section>
-
-<!-- ABOUT -->
-<section id="about" class="section">
-  <h2 class="title">About Us</h2>
-
-  <div class="grid two-col">
-    <div data-aos="fade-right">
-      <img src="images/clinic1.jpg" alt="Clinic Interior">
-    </div>
-
-    <div data-aos="fade-left">
-      <h3>Our Clinic</h3>
-      <p>
-        Swarna Dental Care provides high-quality dental treatments in a clean and comfortable environment.
-        Services include dental checkups, scaling, fillings, root canal treatment, crowns, bridges, extractions,
-        and preventive care.
-      </p>
-
-      <h3>Our Dentist</h3>
-      <img src="images/doctor.jpg" alt="Dr. Sibarpita Subhadarshi Sahu" class="doctor-photo">
-      <p>
-        <strong>Dr. Sibarpita Subhadarshi Sahu</strong><br>
-        BDS (S.O.A)<br>
-        Reg. No: 1587A
-      </p>
-    </div>
-  </div>
-</section>
-
-<!-- SERVICES -->
-<section id="services" class="section light">
-  <h2 class="title">Our Services</h2>
-
-  <div class="grid four-col">
-    <div class="card icon-card" data-aos="flip-left">
-      <i class="fa-solid fa-tooth"></i>
-      <h3>Dental Checkup</h3>
-      <p>Complete oral examination and consultation.</p>
-    </div>
-
-    <div class="card icon-card" data-aos="flip-left">
-      <i class="fa-solid fa-teeth"></i>
-      <h3>Teeth Cleaning</h3>
-      <p>Advanced scaling and polishing for healthy gums.</p>
-    </div>
-
-    <div class="card icon-card" data-aos="flip-left">
-      <i class="fa-solid fa-face-smile"></i>
-      <h3>Cosmetic Dentistry</h3>
-      <p>Smile enhancement with modern techniques.</p>
-    </div>
-
-    <div class="card icon-card" data-aos="flip-left">
-      <i class="fa-solid fa-syringe"></i>
-      <h3>Painless Treatment</h3>
-      <p>Comfort-focused, stress-free dental procedures.</p>
-    </div>
-  </div>
-</section>
-
-<!-- TESTIMONIALS -->
-<section id="testimonials" class="section">
-  <h2 class="title">Patient Testimonials</h2>
-
-  <div class="testimonial-slider">
-    <div class="testimonial" data-aos="fade-up">
-      <img src="images/patient1.png" alt="Patient" class="testimonial-img">
-      ⭐⭐⭐⭐⭐
-      <p>Efficient and friendly doctor. Explains causes well and provides fast solutions.</p>
-      <span>– Dibyajyoti Parida</span>
-    </div>
-
-    <div class="testimonial" data-aos="fade-up">
-      <img src="images/patient1.png" alt="Patient" class="testimonial-img">
-      ⭐⭐⭐⭐⭐
-      <p>Calm, polite, and professional. Highly recommended for genuine treatment.</p>
-      <span>– Suvendu Kumar Hota</span>
-    </div>
-
-    <div class="testimonial" data-aos="fade-up">
-      <img src="images/patient1.png" alt="Patient" class="testimonial-img">
-      ⭐⭐⭐⭐⭐
-      <p>Helpful doctor with professional behavior. Thank you so much!</p>
-      <span>– Sukanta Kumar Palei</span>
-    </div>
-  </div>
-</section>
-
-<!-- TREATMENTS -->
-<section id="treatments" class="section">
-  <h3 class="title">Our Clinical Work</h3>
-  <h3 class="treatment-subtitle">
-    Real treatments performed at Swarna Dental Care using modern technology.
-  </h3>
-
-  <div class="testimonial-slider">
-    <div class="treatment-card">
-      <img src="images/treatment-before-after-1.jpg">
-      <h4>Before Treatment</h4>
-      <p>The teeth showed visible plaque and tartar buildup with <br>
-        crowding in the lower front area, <br>
-        along with inflamed gums that affected overall <br>
-        oral hygiene and smile appearance.</p>
-    </div>
-
-    <div class="treatment-card">
-      <img src="images/treatment-before-after-2.jpg">
-      <h4>After Treatment</h4>
-      <p>After professional dental care, the teeth appear cleaner <br>
-        and brighter with improved alignment, healthier gums, <br>
-        and a natural, confident smile that is easier to maintain.</p>
-    </div>
-  </div>
-  <h4 class="treatment-subtitle">Result</h4>
-  <p class="treatment-note">Professional dental care helped restore oral health, hygiene, and smile aesthetics, delivering a cleaner, <br>
-    healthier, and more confident smile.</p>
-  <h5 class="treatment-note">* Images shown with patient consent.</h5>
-</section>
+    <!-- Header -->
+    <header class="header" id="header">
+        <nav class="navbar">
+            <div class="container">
+                <div class="logo" data-aos="fade-right">
+                    <div class="logo-icon">
+                        <img src="images/logo.png" alt="Swarna Dental Care Logo" class="logo-img">
+                    </div>
+                    <div class="logo-text">
+                        <span class="logo-main">Swarna Dental Care</span>
+                        <span class="logo-sub">Excellence Since 2016</span>
+                    </div>
+                </div>
+                
+                <ul class="nav-menu" id="navMenu">
+                    <li><a href="#home" class="nav-link active">Home</a></li>
+                    <li><a href="#about" class="nav-link">About</a></li>
+                    <li><a href="#services" class="nav-link">Services</a></li>
+                    <li><a href="#gallery" class="nav-link">Gallery</a></li>
+                    <li><a href="#testimonials" class="nav-link">Reviews</a></li>
+                    <li><a href="#contact" class="nav-link">Contact</a></li>
+                    <li>
+                        <a href="tel:+918093974393" class="btn-call-nav">
+                            <i class="fas fa-phone-alt"></i>
+                            <span>Call Now</span>
+                        </a>
+                    </li>
+                </ul>
+                
+                <div class="hamburger" id="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </nav>
+        
+        <!-- Progress Bar -->
+        <div class="progress-bar" id="progressBar"></div>
+    </header>
 
 
 
-<!-- HOURS -->
-<section id="hours" class="section light">
-  <h2 class="title">Clinic Hours</h2>
-  <p>Mon – Sat: 10:00 am – 1:00 pm | 5:00 pm – 8:00 pm</p>
-  <p>Sunday: 10:00 am – 1:00 pm</p>
-</section>
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-background">
+            <img src="images/clinic1.jpg" alt="Swarna Dental Care Clinic" class="hero-bg-img">
+        </div>
+        <div class="hero-particles" id="particles"></div>
+        <div class="hero-overlay"></div>
+        
+        <div class="hero-content">
+            <div class="container">
+                <div class="hero-text" data-aos="fade-up">
+                    <div class="hero-badge">
+                        <i class="fas fa-award"></i>
+                        <span>Premium Dental Care</span>
+                    </div>
+                    <h1 class="hero-title">
+                        Your Perfect Smile<br>
+                        <span class="gradient-text">Starts Here</span>
+                    </h1>
+                    <p class="hero-description">
+                        Experience world-class dental treatments with cutting-edge technology 
+                        and compassionate care in the heart of Bhubaneswar.
+                    </p>
+                    
+                    <div class="hero-stats">
+                        <div class="stat-item" data-aos="fade-up" data-aos-delay="100">
+                            <div class="stat-number">
+                                <span class="counter" data-target="2500">0</span>+
+                            </div>
+                            <div class="stat-label">Happy Patients</div>
+                        </div>
+                        <div class="stat-item" data-aos="fade-up" data-aos-delay="200">
+                            <div class="stat-number">
+                                <span class="counter" data-target="10">0</span>+
+                            </div>
+                            <div class="stat-label">Years Experience</div>
+                        </div>
+                        <div class="stat-item" data-aos="fade-up" data-aos-delay="300">
+                            <div class="stat-number">
+                                <span class="counter" data-target="15">0</span>+
+                            </div>
+                            <div class="stat-label">Services</div>
+                        </div>
+                    </div>
+                    
+                    <div class="hero-buttons" data-aos="fade-up" data-aos-delay="400">
+                        <a href="https://forms.gle/AhPmukqKpe9QDpXF7" target="_blank" class="btn btn-primary">
+                            <span>Book Appointment</span>
+                            <i class="fas fa-calendar-check"></i>
+                        </a>
+                        <a href="tel:+918093974393" class="btn btn-secondary">
+                            <i class="fas fa-phone-alt"></i>
+                            <span>+91 80939 74393</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Scroll Indicator -->
+        <div class="scroll-indicator" data-aos="fade-up" data-aos-delay="600">
+            <div class="mouse">
+                <div class="wheel"></div>
+            </div>
+            <p>Scroll to explore</p>
+        </div>
+    </section>
+    <!-- NOTICE BAR -->
+    <section class="notice-bar" data-aos="zoom-in">
+        <p>❤️ Spreading smiles this <strong>Valentine's Day</strong>! Wishing you and your loved ones healthy teeth and happy hearts 💖</p>
+    </section>
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <span class="section-label">Who We Are</span>
+                <h2 class="section-title">About <span class="gradient-text">Swarna Dental Care</span></h2>
+                <p class="section-subtitle">Where modern dentistry meets compassionate care</p>
+            </div>
+            
+            <div class="about-content">
+                <div class="about-image" data-aos="fade-right" data-aos-delay="200">
+                    <div class="image-wrapper">
+                        <div class="image-placeholder">
+                            <img src="images/clinic5.jpg" alt="Dr. Sibarpita Subhadarshi Sahu" class="doctor-img">
+                        </div>
+                        <div class="floating-card card-1">
+                            <i class="fas fa-award"></i>
+                            <span>Premium Quality</span>
+                        </div>
+                        <div class="floating-card card-2">
+                            <i class="fas fa-shield-alt"></i>
+                            <span>Safe & Hygienic</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="about-text" data-aos="fade-left" data-aos-delay="300">
+                    <div class="feature-list">
+                        <div class="feature-item">
+                            <div class="feature-icon">
+                                <i class="fas fa-check-circle"></i>
+                            </div>
+                            <div class="feature-content">
+                                <h4>State-of-the-Art Technology</h4>
+                                <p>Equipped with the latest dental equipment for precise and effective treatments.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="feature-item">
+                            <div class="feature-icon">
+                                <i class="fas fa-check-circle"></i>
+                            </div>
+                            <div class="feature-content">
+                                <h4>Experienced Professional</h4>
+                                <p>Led by Dr. Sibarpita Subhadarshi Sahu with extensive expertise in modern dentistry.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="feature-item">
+                            <div class="feature-icon">
+                                <i class="fas fa-check-circle"></i>
+                            </div>
+                            <div class="feature-content">
+                                <h4>Comprehensive Care</h4>
+                                <p>From routine checkups to advanced procedures, we cover all your dental needs.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="feature-item">
+                            <div class="feature-icon">
+                                <i class="fas fa-check-circle"></i>
+                            </div>
+                            <div class="feature-content">
+                                <h4>Comfort-Focused Environment</h4>
+                                <p>Clean, modern, and welcoming clinic designed for your complete comfort.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="dentist-card">
+                        <div class="dentist-avatar">
+                            <img src="images/doctor.jpg"
+                                alt="Dr. Sibarpita Subhadarshi Sahu"
+                                class="dentist-avatar-img">
+                                                </div>
+                        <div class="dentist-info">
+                            <h3>Dr. Sibarpita Subhadarshi Sahu</h3>
+                            <p class="dentist-degree">BDS (S.O.A) · Reg. No: 1587A</p>
+                            <p class="dentist-description">
+                                Dedicated to providing exceptional dental care with a gentle touch and professional expertise.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-<!-- APPOINTMENT -->
-<section id="appointment" class="section">
-  <h2 class="title">Book Appointment</h2>
-  <p>Quick and easy online appointment booking.</p>
-  <a class="btn primary" href="https://forms.gle/AhPmukqKpe9QDpXF7" target="_blank">Book Now</a>
-</section>
+    <!-- Services Section -->
+    <section id="services" class="services">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <span class="section-label">What We Offer</span>
+                <h2 class="section-title">Our <span class="gradient-text">Premium Services</span></h2>
+                <p class="section-subtitle">Comprehensive dental solutions for your complete oral health</p>
+            </div>
+            
+            <div class="services-grid">
+                <div class="service-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="service-number">01</div>
+                    <div class="service-icon">
+                        <i class="fas fa-stethoscope"></i>
+                    </div>
+                    <h3>Dental Checkup</h3>
+                    <p>Comprehensive oral examination and personalized consultation for optimal dental health.</p>
+                    <div class="service-link">
+                        <i class="fas fa-arrow-right"></i>
+                    </div>
+                </div>
+                
+                <div class="service-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="service-number">02</div>
+                    <div class="service-icon">
+                        <i class="fas fa-tooth"></i>
+                    </div>
+                    <h3>Teeth Cleaning</h3>
+                    <p>Advanced scaling and polishing procedures for healthy gums and sparkling teeth.</p>
+                    <div class="service-link">
+                        <i class="fas fa-arrow-right"></i>
+                    </div>
+                </div>
+                
+                <div class="service-card" data-aos="fade-up" data-aos-delay="300">
+                    <div class="service-number">03</div>
+                    <div class="service-icon">
+                        <i class="fas fa-smile"></i>
+                    </div>
+                    <h3>Cosmetic Dentistry</h3>
+                    <p>Transform your smile with modern cosmetic techniques and aesthetic enhancements.</p>
+                    <div class="service-link">
+                        <i class="fas fa-arrow-right"></i>
+                    </div>
+                </div>
+                
+                <div class="service-card" data-aos="fade-up" data-aos-delay="400">
+                    <div class="service-number">04</div>
+                    <div class="service-icon">
+                        <i class="fas fa-heart"></i>
+                    </div>
+                    <h3>Painless Treatment</h3>
+                    <p>Comfort-focused, anxiety-free dental procedures with gentle care techniques.</p>
+                    <div class="service-link">
+                        <i class="fas fa-arrow-right"></i>
+                    </div>
+                </div>
+                
+                <div class="service-card" data-aos="fade-up" data-aos-delay="500">
+                    <div class="service-number">05</div>
+                    <div class="service-icon">
+                        <i class="fas fa-tooth"></i>
+                    </div>
+                    <h3>Root Canal</h3>
+                    <p>Advanced endodontic treatment to save and restore your natural teeth.</p>
+                    <div class="service-link">
+                        <i class="fas fa-arrow-right"></i>
+                    </div>
+                </div>
+                
+                <div class="service-card" data-aos="fade-up" data-aos-delay="600">
+                    <div class="service-number">06</div>
+                    <div class="service-icon">
+                        <i class="fas fa-crown"></i>
+                    </div>
+                    <h3>Crowns & Bridges</h3>
+                    <p>Durable restorations to replace missing teeth and restore your smile.</p>
+                    <div class="service-link">
+                        <i class="fas fa-arrow-right"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-<!-- LOCATION -->
-<section id="location" class="section light">
-  <h2 class="title">Visit Us</h2>
+    <!-- Clinical Gallery Section -->
+    <section id="gallery" class="gallery">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <span class="section-label">Real Results</span>
+                <h2 class="section-title">Clinical <span class="gradient-text">Transformations</span></h2>
+                <p class="section-subtitle">Witness the power of professional dental care</p>
+            </div>
+            
+            <div class="gallery-grid">
+                <div class="gallery-card" data-aos="zoom-in" data-aos-delay="100">
+                    <div class="gallery-image before">
+                        <img src="images/treatment-before-after-1.jpg" alt="Before Treatment" class="gallery-img">
+                        <div class="image-overlay">
+                            <i class="fas fa-search-plus"></i>
+                        </div>
+                        <div class="gallery-badge">Before</div>
+                    </div>
+                    <div class="gallery-content">
+                        <h3>Initial Condition</h3>
+                        <p>Visible plaque and tartar buildup with crowding and inflamed gums affecting oral hygiene.</p>
+                    </div>
+                </div>
+                
+                <div class="gallery-card" data-aos="zoom-in" data-aos-delay="200">
+                    <div class="gallery-image after">
+                        <img src="images/treatment-before-after-2.jpg" alt="After Treatment" class="gallery-img">
+                        <div class="image-overlay">
+                            <i class="fas fa-search-plus"></i>
+                        </div>
+                        <div class="gallery-badge success">After</div>
+                    </div>
+                    <div class="gallery-content">
+                        <h3>Transformed Smile</h3>
+                        <p>Cleaner, brighter teeth with improved alignment, healthier gums, and natural confidence.</p>
+                    </div>
+                </div>
+                
+                <div class="gallery-card result-card" data-aos="zoom-in" data-aos-delay="300">
+                    <div class="result-icon">
+                        <i class="fas fa-check-circle"></i>
+                    </div>
+                    <h3>Outstanding Results</h3>
+                    <p>Professional dental care restored oral health, hygiene, and smile aesthetics.</p>
+                    <div class="result-features">
+                        <span><i class="fas fa-check"></i> Improved Hygiene</span>
+                        <span><i class="fas fa-check"></i> Enhanced Aesthetics</span>
+                        <span><i class="fas fa-check"></i> Boosted Confidence</span>
+                    </div>
+                </div>
+            </div>
+            
+            <p class="gallery-note" data-aos="fade-up">* All images shown with patient consent</p>
+        </div>
+    </section>
 
-  <div class="grid two-col">
-    <div data-aos="fade-right">
-      <p>
-        Nilima Complex, Plot No. 988<br>
-        Near Delta Square, Baramunda<br>
-        Bhubaneswar – 751003
-      </p>
-      <a class="btn primary" href="https://maps.app.goo.gl/rAGBcvqvvve7DV9r6" target="_blank">
-        Open in Google Maps
-      </a>
-    </div>
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="testimonials">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <span class="section-label">Patient Reviews</span>
+                <h2 class="section-title">What Our <span class="gradient-text">Patients Say</span></h2>
+                <p class="section-subtitle">Real experiences from real people</p>
+            </div>
+            
+            <div class="testimonials-wrapper">
+                <div class="testimonial-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="testimonial-header">
+                        <div class="testimonial-avatar">
+                            <i class="fas fa-user"></i>
+                        </div>
+                        <div class="testimonial-meta">
+                            <h4>Dibyajyoti Parida</h4>
+                            <div class="stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                        <div class="quote-icon">
+                            <i class="fas fa-quote-right"></i>
+                        </div>
+                    </div>
+                    <p class="testimonial-text">
+                        Efficient and friendly doctor. Explains causes well and provides fast solutions. 
+                        Highly recommend for anyone seeking quality dental care!
+                    </p>
+                </div>
+                
+                <div class="testimonial-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="testimonial-header">
+                        <div class="testimonial-avatar">
+                            <i class="fas fa-user"></i>
+                        </div>
+                        <div class="testimonial-meta">
+                            <h4>Suvendu Kumar Hota</h4>
+                            <div class="stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                        <div class="quote-icon">
+                            <i class="fas fa-quote-right"></i>
+                        </div>
+                    </div>
+                    <p class="testimonial-text">
+                        Calm, polite, and professional. The doctor provides genuine treatment with great care. 
+                        Highly recommended for anyone looking for trustworthy dental services.
+                    </p>
+                </div>
+                
+                <div class="testimonial-card" data-aos="fade-up" data-aos-delay="300">
+                    <div class="testimonial-header">
+                        <div class="testimonial-avatar">
+                            <i class="fas fa-user"></i>
+                        </div>
+                        <div class="testimonial-meta">
+                            <h4>Sukanta Kumar Palei</h4>
+                            <div class="stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                        <div class="quote-icon">
+                            <i class="fas fa-quote-right"></i>
+                        </div>
+                    </div>
+                    <p class="testimonial-text">
+                        Helpful doctor with professional behavior. The treatment was excellent and the 
+                        environment is very comfortable. Thank you so much!
+                    </p>
+                </div>
+            </div>
+            
+            <div class="rating-summary" data-aos="fade-up" data-aos-delay="400">
+                <div class="rating-score">
+                    <div class="score">5.0</div>
+                    <div class="stars-large">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p>Based on 100+ reviews</p>
+                </div>
+            </div>
+        </div>
+    </section>
 
-    <div data-aos="fade-left">
-      <iframe
-        src="https://maps.google.com/maps?q=Nilima%20Complex%20Baramunda%20Bhubaneswar&z=15&output=embed"
-        loading="lazy"
-        referrerpolicy="no-referrer-when-downgrade">
-      </iframe>
-    </div>
-  </div>
-</section>
+    <!-- Appointment Section -->
+    <section class="appointment-section">
+        <div class="container">
+            <div class="appointment-content" data-aos="fade-up">
+                <div class="appointment-info">
+                    <div class="appointment-icon">
+                        <i class="far fa-clock"></i>
+                    </div>
+                    <div class="appointment-text">
+                        <h3>Clinic Hours</h3>
+                        <div class="hours-list">
+                            <div class="hour-item">
+                                <span class="day">Monday - Saturday</span>
+                                <span class="time">10:00 AM - 1:00 PM<br>5:00 PM - 8:00 PM</span>
+                            </div>
+                            <div class="hour-item">
+                                <span class="day">Sunday</span>
+                                <span class="time">10:00 AM - 1:00 PM</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="appointment-cta">
+                    <h2>Ready for a Brighter Smile?</h2>
+                    <p>Book your appointment today and experience the difference</p>
+                    <a href="https://forms.gle/AhPmukqKpe9QDpXF7" target="_blank" class="btn btn-primary btn-large">
+                        <span>Book Appointment Now</span>
+                        <i class="fas fa-calendar-check"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
 
-<!-- FOOTER -->
-<footer class="footer">
-  <div class="social-links">
-    <a href="https://www.facebook.com/share/1LB9zmMrTS/?mibextid=wwXIfr" target="_blank" aria-label="Facebook">
-      <i class="fa-brands fa-facebook-f"></i>
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <span class="section-label">Get In Touch</span>
+                <h2 class="section-title">Visit Our <span class="gradient-text">Clinic</span></h2>
+                <p class="section-subtitle">We're here to help you achieve your perfect smile</p>
+            </div>
+            
+            <div class="contact-grid">
+                <div class="contact-info" data-aos="fade-right">
+                    <div class="info-card">
+                        <div class="info-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div class="info-content">
+                            <h4>Location</h4>
+                            <p>Nilima Complex, Plot No. 988<br>Near Delta Square, Baramunda<br>Bhubaneswar – 751003</p>
+                        </div>
+                    </div>
+                    
+                    <div class="info-card">
+                        <div class="info-icon">
+                            <i class="fas fa-phone-alt"></i>
+                        </div>
+                        <div class="info-content">
+                            <h4>Phone</h4>
+                            <p><a href="tel:+918093974393">+91 80939 74393</a></p>
+                        </div>
+                    </div>
+                    
+                    <div class="info-card">
+                        <div class="info-icon">
+                            <i class="fas fa-share-alt"></i>
+                        </div>
+                        <div class="info-content">
+                            <h4>Follow Us</h4>
+                            <div class="social-links">
+                                <a href="https://www.facebook.com/share/1LB9zmMrTS/?mibextid=wwXIfr" target="_blank" class="social-link">
+                                    <i class="fab fa-facebook-f"></i>
+                                </a>
+                                <a href="https://www.instagram.com/swarna_dental_care" target="_blank" class="social-link">
+                                    <i class="fab fa-instagram"></i>
+                                </a>
+                                <a href="https://wa.me/918093974393" target="_blank" class="social-link">
+                                    <i class="fab fa-whatsapp"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <a href="https://maps.app.goo.gl/rAGBcvqvvve7DV9r6" target="_blank" class="btn btn-primary">
+                        <i class="fas fa-map-marked-alt"></i>
+                        <span>Get Directions</span>
+                    </a>
+                </div>
+                
+                <div class="map-wrapper" data-aos="fade-left">
+                    <div class="map-container">
+                        <iframe 
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3742.5!2d85.8!3d20.29!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjDCsDE3JzI0LjAiTiA4NcKwNDgnMDAuMCJF!5e0!3m2!1sen!2sin!4v1234567890!5m2!1sen!2sin" 
+                            width="100%" 
+                            height="500" 
+                            style="border:0;" 
+                            allowfullscreen="" 
+                            loading="lazy">
+                        </iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <div class="footer-logo">
+                        <i class="fas fa-tooth"></i>
+                        <span>Swarna Dental Care</span>
+                    </div>
+                    <p>Providing trusted dental care with modern technology and compassionate service since 2016.</p>
+                </div>
+                
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#services">Services</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-contact">
+                    <h4>Contact Info</h4>
+                    <ul>
+                        <li><i class="fas fa-map-marker-alt"></i> Baramunda, Bhubaneswar</li>
+                        <li><i class="fas fa-phone-alt"></i> +91 80939 74393</li>
+                        <li><i class="fas fa-clock"></i> Mon: 10AM-1PM, 5PM-8PM & Sat: 10AM-1PM</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2026 Swarna Dental Care. All Rights Reserved · Since 2016</p>
+                <p class="powered-by">Powered by <a href="https://sites.google.com/view/powercloud/" target="_blank">PowerCloud</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- WhatsApp Float Button -->
+    <a href="https://wa.me/918093974393" class="whatsapp-float" target="_blank" aria-label="WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+        <span class="whatsapp-text">Chat with us</span>
     </a>
-    <a href="https://www.instagram.com/swarna_dental_care" target="_blank" aria-label="Instagram">
-      <i class="fa-brands fa-instagram"></i>
-    </a>
-  </div>
 
-  <p>© 2026 <strong>Swarna Dental Care</strong>. All Rights Reserved · Since 2016</p>
-  <p>Providing trusted dental care with modern technology</p>
-    <p class="footer-powered">
-    Powered by <a href="https://sites.google.com/view/powercloud/" target="_blank">PowerCloud</a>
-  </p>
-</footer>
+    <!-- Scroll to Top Button -->
+    <button class="scroll-top" id="scrollTop">
+        <i class="fas fa-arrow-up"></i>
+    </button>
 
-<!-- WHATSAPP FLOAT -->
-<a href="https://wa.me/918093974393" class="whatsapp" target="_blank" aria-label="WhatsApp">
-  <i class="fa-brands fa-whatsapp"></i>
-</a>
-
-<!-- AOS SCRIPT -->
-<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-<script>
-  AOS.init({
-    duration: 900,
-    once: true
-  });
-</script>
-
+    <!-- Scripts -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
-
