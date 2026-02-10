@@ -1327,7 +1327,7 @@ section {
 
 .info-content p,
 .info-content a {
-    color: var(--text-light);
+    /* color: var(--text-light); */
     line-height: 1.8;
     text-decoration: none;
 }
