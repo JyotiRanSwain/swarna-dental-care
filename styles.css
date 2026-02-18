@@ -1832,3 +1832,452 @@ section {
     display: block;
 }
 
+
+
+
+/* ============================================================
+   SWABOOT CHATBOT — Swarna Dental Care
+   ============================================================ */
+
+/* Launcher Button */
+.swaboot-launcher {
+    position: fixed;
+    bottom: 5.5rem;
+    right: 2rem;
+    width: 58px;
+    height: 58px;
+    border-radius: 50%;
+    background: var(--gradient-primary);
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 6px 24px rgba(99,102,241,0.45);
+    z-index: 1000;
+    transition: var(--transition);
+}
+
+.swaboot-launcher:hover {
+    transform: scale(1.12);
+    box-shadow: 0 10px 32px rgba(99,102,241,0.55);
+}
+
+.swaboot-launcher .swaboot-icon-open,
+.swaboot-launcher .swaboot-icon-close {
+    color: #fff;
+    font-size: 1.4rem;
+    position: absolute;
+    transition: opacity 0.25s, transform 0.3s;
+}
+
+.swaboot-launcher .swaboot-icon-close {
+    opacity: 0;
+    transform: rotate(-90deg);
+}
+
+.swaboot-launcher.swaboot-open .swaboot-icon-open {
+    opacity: 0;
+    transform: rotate(90deg);
+}
+
+.swaboot-launcher.swaboot-open .swaboot-icon-close {
+    opacity: 1;
+    transform: rotate(0deg);
+}
+
+/* Badge */
+.swaboot-badge {
+    position: absolute;
+    top: -4px;
+    right: -4px;
+    width: 20px;
+    height: 20px;
+    background: #ef4444;
+    color: #fff;
+    font-size: 0.7rem;
+    font-weight: 700;
+    border-radius: 50%;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid #fff;
+}
+
+/* Chat Window */
+.swaboot-window {
+    position: fixed;
+    bottom: 10rem;
+    right: 2rem;
+    width: 370px;
+    max-height: 540px;
+    border-radius: 20px;
+    background: #fff;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.18), 0 0 0 1px rgba(99,102,241,0.1);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    z-index: 999;
+    /* hidden by default */
+    opacity: 0;
+    pointer-events: none;
+    transform: scale(0.88) translateY(16px);
+    transform-origin: bottom right;
+    transition: opacity 0.3s ease, transform 0.35s cubic-bezier(0.34,1.56,0.64,1);
+}
+
+.swaboot-window.swaboot-visible {
+    opacity: 1;
+    pointer-events: all;
+    transform: scale(1) translateY(0);
+}
+
+/* Header */
+.swaboot-header {
+    background: var(--gradient-primary);
+    padding: 16px 18px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex-shrink: 0;
+}
+
+.swaboot-avatar-wrap {
+    position: relative;
+    width: 42px;
+    height: 42px;
+    background: rgba(255,255,255,0.15);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid rgba(255,255,255,0.3);
+    flex-shrink: 0;
+}
+
+.swaboot-avatar-emoji {
+    font-size: 1.3rem;
+    line-height: 1;
+}
+
+.swaboot-online-dot {
+    position: absolute;
+    bottom: 1px;
+    right: 1px;
+    width: 10px;
+    height: 10px;
+    background: var(--success);
+    border-radius: 50%;
+    border: 2px solid #fff;
+    animation: swabootPulse 2s infinite;
+}
+
+@keyframes swabootPulse {
+    0%, 100% { opacity: 1; }
+    50%       { opacity: 0.5; }
+}
+
+.swaboot-header-info {
+    flex: 1;
+}
+
+.swaboot-header-info h3 {
+    color: #fff;
+    font-size: 1rem;
+    font-weight: 700;
+    line-height: 1.2;
+    margin: 0;
+}
+
+.swaboot-header-info span {
+    color: rgba(255,255,255,0.75);
+    font-size: 0.72rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.swaboot-close-btn {
+    background: rgba(255,255,255,0.15);
+    border: none;
+    color: #fff;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.85rem;
+    transition: var(--transition);
+    flex-shrink: 0;
+}
+
+.swaboot-close-btn:hover {
+    background: rgba(255,255,255,0.3);
+    transform: rotate(90deg);
+}
+
+/* Messages Area */
+.swaboot-messages {
+    flex: 1;
+    overflow-y: auto;
+    padding: 14px 14px 6px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    scroll-behavior: smooth;
+    background: #f8fafc;
+}
+
+.swaboot-messages::-webkit-scrollbar { width: 4px; }
+.swaboot-messages::-webkit-scrollbar-track { background: transparent; }
+.swaboot-messages::-webkit-scrollbar-thumb {
+    background: var(--light-dark);
+    border-radius: 2px;
+}
+
+/* Message Rows */
+.swaboot-row {
+    display: flex;
+    align-items: flex-end;
+    gap: 8px;
+    animation: swabootFadeUp 0.28s ease;
+}
+
+@keyframes swabootFadeUp {
+    from { opacity: 0; transform: translateY(10px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+.swaboot-row-user {
+    flex-direction: row-reverse;
+}
+
+.swaboot-bot-icon {
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    background: #fff;
+    border: 1.5px solid var(--light-dark);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.9rem;
+    flex-shrink: 0;
+}
+
+.swaboot-user-icon {
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    background: var(--gradient-primary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    color: #fff;
+    font-size: 0.75rem;
+}
+
+/* Bubbles */
+.swaboot-bubble {
+    max-width: 80%;
+    padding: 10px 14px;
+    border-radius: 16px;
+    font-size: 0.845rem;
+    line-height: 1.6;
+}
+
+.swaboot-bubble-bot {
+    background: #fff;
+    color: var(--text);
+    border: 1px solid var(--light-dark);
+    border-bottom-left-radius: 4px;
+    box-shadow: var(--shadow-sm);
+}
+
+.swaboot-bubble-bot a {
+    color: var(--primary);
+    font-weight: 600;
+}
+
+.swaboot-bubble-user {
+    background: var(--gradient-primary);
+    color: #fff;
+    border-bottom-right-radius: 4px;
+    box-shadow: var(--shadow);
+}
+
+/* Typing Indicator */
+.swaboot-typing {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    padding: 12px 16px;
+    min-width: 56px;
+}
+
+.swaboot-typing span {
+    width: 7px;
+    height: 7px;
+    background: var(--primary);
+    border-radius: 50%;
+    opacity: 0.6;
+    animation: swabootBounce 1.2s infinite;
+}
+
+.swaboot-typing span:nth-child(2) { animation-delay: 0.2s; }
+.swaboot-typing span:nth-child(3) { animation-delay: 0.4s; }
+
+@keyframes swabootBounce {
+    0%, 60%, 100% { transform: translateY(0); }
+    30%            { transform: translateY(-7px); }
+}
+
+/* Timestamp */
+.swaboot-timestamp {
+    text-align: center;
+    font-size: 0.68rem;
+    color: var(--text-muted);
+    margin: 4px 0;
+}
+
+/* Quick Reply Buttons */
+.swaboot-quick-replies {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    padding: 0 0 4px 36px;
+    animation: swabootFadeUp 0.3s ease;
+}
+
+.swaboot-qr-btn {
+    background: #fff;
+    border: 1.5px solid var(--primary);
+    color: var(--primary);
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-size: 0.76rem;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    cursor: pointer;
+    transition: var(--transition-fast);
+    white-space: nowrap;
+}
+
+.swaboot-qr-btn:hover {
+    background: var(--gradient-primary);
+    color: #fff;
+    border-color: transparent;
+    transform: translateY(-2px);
+    box-shadow: var(--shadow);
+}
+
+/* Input Area */
+.swaboot-input-wrap {
+    padding: 12px 14px;
+    border-top: 1px solid var(--light-dark);
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    background: #fff;
+    flex-shrink: 0;
+}
+
+.swaboot-input {
+    flex: 1;
+    border: 1.5px solid var(--light-dark);
+    border-radius: 22px;
+    padding: 9px 15px;
+    font-size: 0.845rem;
+    font-family: 'Poppins', sans-serif;
+    color: var(--text);
+    outline: none;
+    transition: var(--transition-fast);
+    background: var(--light);
+}
+
+.swaboot-input:focus {
+    border-color: var(--primary);
+    background: #fff;
+    box-shadow: 0 0 0 3px rgba(99,102,241,0.1);
+}
+
+.swaboot-input::placeholder {
+    color: var(--text-muted);
+}
+
+.swaboot-send {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: var(--gradient-primary);
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-size: 0.9rem;
+    transition: var(--transition);
+    flex-shrink: 0;
+    box-shadow: var(--shadow);
+}
+
+.swaboot-send:hover {
+    transform: scale(1.1) translateY(-2px);
+    box-shadow: var(--shadow-md);
+}
+
+/* Hint tooltip */
+.swaboot-hint {
+    position: fixed;
+    bottom: 9rem;
+    right: 5.5rem;
+    background: var(--dark);
+    color: #fff;
+    padding: 8px 14px;
+    border-radius: var(--radius);
+    font-size: 0.82rem;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+    white-space: nowrap;
+    box-shadow: var(--shadow-lg);
+    animation: swabootFadeUp 0.4s ease;
+    z-index: 998;
+    pointer-events: none;
+}
+
+.swaboot-hint::after {
+    content: '';
+    position: absolute;
+    right: -8px;
+    top: 50%;
+    transform: translateY(-50%);
+    border: 8px solid transparent;
+    border-right: none;
+    border-left-color: var(--dark);
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+    .swaboot-window {
+        width: calc(100vw - 20px);
+        right: 10px;
+        bottom: 9.5rem;
+        max-height: 480px;
+    }
+
+    .swaboot-launcher {
+        right: 1.5rem;
+        bottom: 5rem;
+        width: 52px;
+        height: 52px;
+    }
+
+    .swaboot-hint {
+        right: 4.5rem;
+        bottom: 8.5rem;
+    }
+}
+
