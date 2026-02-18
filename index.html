@@ -660,10 +660,305 @@
         <i class="fas fa-arrow-up"></i>
     </button>
 
+    <!-- ========== SWABOOT CHATBOT ========== -->
+    <!-- Launcher Button -->
+    <button class="swaboot-launcher" id="swabootLauncher" aria-label="Open Swaboot Chat">
+        <i class="fas fa-comment-dots swaboot-icon-open"></i>
+        <i class="fas fa-times swaboot-icon-close"></i>
+        <span class="swaboot-badge" id="swabootBadge">1</span>
+    </button>
+
+    <!-- Chat Window -->
+    <div class="swaboot-window" id="swabootWindow" role="dialog" aria-label="Swaboot Dental Assistant">
+        <!-- Header -->
+        <div class="swaboot-header">
+            <div class="swaboot-avatar-wrap">
+                <span class="swaboot-avatar-emoji">🦷</span>
+                <span class="swaboot-online-dot"></span>
+            </div>
+            <div class="swaboot-header-info">
+                <h3>Swaboot</h3>
+                <span>Swarna Dental Assistant</span>
+            </div>
+            <button class="swaboot-close-btn" id="swabootClose" aria-label="Close">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+
+        <!-- Messages Area -->
+        <div class="swaboot-messages" id="swabootMessages"></div>
+
+        <!-- Input Area -->
+        <div class="swaboot-input-wrap">
+            <input
+                type="text"
+                id="swabootInput"
+                class="swaboot-input"
+                placeholder="Ask about appointments, treatments…"
+                autocomplete="off"
+            />
+            <button class="swaboot-send" id="swabootSend" aria-label="Send">
+                <i class="fas fa-paper-plane"></i>
+            </button>
+        </div>
+    </div>
+    <!-- ========== END SWABOOT CHATBOT ========== -->
+
     <!-- Scripts -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="script.js"></script>
+    <script>
+    // ============================================================
+    //  SWABOOT CHATBOT — Swarna Dental Care
+    // ============================================================
+    (function () {
+        // ── Q&A Knowledge Base ──────────────────────────────────
+        const QA = [
+            {
+                patterns: ["appointment", "book", "schedule", "visit", "reserve"],
+                answer: "You can book an appointment easily! 📅 Fill the online form: <a href='https://forms.gle/AhPmukqKpe9QDpXF7' target='_blank' style='color:var(--primary);font-weight:600'>Click here to Book</a>, or call us at <a href='tel:+918093974393' style='color:var(--primary);font-weight:600'>+91 80939 74393</a>. We're open Mon–Sat: 10AM–1PM & 5PM–8PM, Sunday: 10AM–1PM."
+            },
+            {
+                patterns: ["tooth pain", "toothache", "pain", "ache", "hurts", "sensitive", "sensitivity"],
+                answer: "Tooth pain should never be ignored! 😟 It could be due to a cavity, cracked tooth, gum disease, or an exposed root. Please call us immediately at <a href='tel:+918093974393' style='color:var(--primary);font-weight:600'>+91 80939 74393</a>. We offer painless treatments to get you comfortable fast."
+            },
+            {
+                patterns: ["whitening", "whiten", "bleach", "bright", "stain", "yellow"],
+                answer: "We offer professional teeth whitening that gives visible results in one session! 😁 Our advanced whitening treatments are safe, effective, and long-lasting (1–3 years with proper care). Book a consultation to get your brightest smile!"
+            },
+            {
+                patterns: ["braces", "orthodontic", "alignment", "crooked", "invisalign", "aligner", "wire"],
+                answer: "We provide modern orthodontic treatments including traditional braces and clear aligner options. Treatment duration varies from 6 months to 2+ years based on complexity. Book a free consultation with Dr. Sibarpita Sahu to find the best option for you!"
+            },
+            {
+                patterns: ["implant", "missing tooth", "replace", "gap", "artificial tooth"],
+                answer: "Dental implants are the gold standard for replacing missing teeth 🦷. They look, feel, and function like natural teeth and can last a lifetime! We also offer bridges and dentures as alternatives. Contact us to discuss which option suits you best."
+            },
+            {
+                patterns: ["cleaning", "scale", "polish", "hygiene", "checkup", "check-up", "routine", "scaling"],
+                answer: "We recommend a professional cleaning every 6 months! 🌟 Our advanced scaling and polishing removes plaque, tartar, and stains while our dentist checks for early signs of any issues. Prevention is always better than cure!"
+            },
+            {
+                patterns: ["cavity", "filling", "decay", "hole", "caries"],
+                answer: "Cavities are treated with tooth-coloured composite fillings that blend perfectly with your natural teeth. 🦷 The procedure is quick and virtually painless with local anaesthesia. Caught early, it's simple and affordable!"
+            },
+            {
+                patterns: ["root canal", "pulp", "infection", "abscess", "rct"],
+                answer: "Root canal treatment (RCT) removes infected pulp tissue to save your natural tooth and eliminate pain. 💊 With modern techniques, it's as comfortable as a regular filling. We also place a protective crown afterwards for longevity."
+            },
+            {
+                patterns: ["crown", "cap", "broken", "cracked", "chipped"],
+                answer: "Dental crowns are custom-made caps that restore damaged teeth's shape, strength, and appearance. They're used after root canals, for cracked teeth, or heavily decayed teeth. Our crowns typically last 10–15 years! 👑"
+            },
+            {
+                patterns: ["extraction", "remove", "pull", "wisdom", "wisdom tooth"],
+                answer: "Tooth extractions are performed under local anaesthesia for a comfortable experience. 🏥 Wisdom teeth are often removed if impacted or causing crowding. Recovery takes 3–7 days and we'll give you complete aftercare instructions!"
+            },
+            {
+                patterns: ["emergency", "urgent", "knocked", "fell out", "swelling", "broken tooth"],
+                answer: "🚨 Dental Emergency? Call us NOW: <a href='tel:+918093974393' style='color:var(--primary);font-weight:600'>+91 80939 74393</a>. If a tooth is knocked out, keep it moist in milk or saliva and come in within 30 minutes for the best chance of saving it!"
+            },
+            {
+                patterns: ["cost", "price", "fee", "charge", "afford", "insurance", "payment", "rate", "how much"],
+                answer: "We offer affordable, transparent pricing with no hidden charges. 💰 We strive to make quality dental care accessible to everyone. Contact us at <a href='tel:+918093974393' style='color:var(--primary);font-weight:600'>+91 80939 74393</a> for detailed pricing on specific treatments."
+            },
+            {
+                patterns: ["children", "kid", "child", "baby", "pediatric", "son", "daughter"],
+                answer: "We love seeing young patients! 🧒 We recommend the first dental visit around age 1 or when the first tooth appears. Our friendly team makes visits fun and stress-free, building good dental habits for life!"
+            },
+            {
+                patterns: ["gum", "gums", "bleeding gum", "gingivitis", "periodont", "swollen gum"],
+                answer: "Bleeding or swollen gums are signs of gingivitis — early-stage gum disease that's very treatable! 🌿 Good brushing, flossing, and professional cleaning can reverse it. Don't ignore it; come see us before it progresses!"
+            },
+            {
+                patterns: ["veneer", "porcelain", "smile makeover", "cosmetic", "gap teeth", "aesthetic"],
+                answer: "We offer cosmetic dentistry including veneers, smile design, and makeovers to give you the smile you've always dreamed of! 😍 Veneers can fix chips, stains, gaps, and uneven teeth and last 10–20 years."
+            },
+            {
+                patterns: ["hours", "open", "timing", "time", "when", "working", "schedule", "days"],
+                answer: "🕘 Our Clinic Hours:<br>• Mon – Sat: 10:00 AM – 1:00 PM &amp; 5:00 PM – 8:00 PM<br>• Sunday: 10:00 AM – 1:00 PM<br>Call us: <a href='tel:+918093974393' style='color:var(--primary);font-weight:600'>+91 80939 74393</a>"
+            },
+            {
+                patterns: ["location", "address", "where", "find", "directions", "place", "baramunda"],
+                answer: "📍 We're located at:<br><strong>Nilima Complex, Plot No. 988</strong><br>Near Delta Square, Baramunda<br>Bhubaneswar – 751003<br><br><a href='https://maps.app.goo.gl/rAGBcvqvvve7DV9r6' target='_blank' style='color:var(--primary);font-weight:600'>📍 Get Directions on Google Maps</a>"
+            },
+            {
+                patterns: ["doctor", "dentist", "dr", "dr.", "sibarpita", "sahu", "who is"],
+                answer: "Our clinic is led by <strong>Dr. Sibarpita Subhadarshi Sahu</strong> 👩‍⚕️<br>• BDS from S.O.A University<br>• Registration No: 1587A<br>• Expert in modern, painless dentistry<br>• Trusted by 2500+ happy patients since 2016!"
+            },
+            {
+                patterns: ["denture", "full mouth", "removable", "partial denture"],
+                answer: "We provide high-quality dentures — full or partial — that restore your smile and chewing function. 😊 Modern dentures look natural and fit comfortably. Book a consultation to find the best solution for you!"
+            },
+            {
+                patterns: ["whatsapp", "message", "contact", "reach", "call", "phone", "number"],
+                answer: "You can reach us via:<br>📞 Call: <a href='tel:+918093974393' style='color:var(--primary);font-weight:600'>+91 80939 74393</a><br>💬 WhatsApp: <a href='https://wa.me/918093974393' target='_blank' style='color:var(--primary);font-weight:600'>Chat on WhatsApp</a><br>We usually respond within a few minutes!"
+            },
+            {
+                patterns: ["hi", "hello", "hey", "good morning", "good evening", "good afternoon", "hii", "helo", "namaste"],
+                answer: "Namaste! 🙏 Welcome to Swarna Dental Care. I'm <strong>Swaboot</strong>, your dental assistant. I can help with appointments, treatments, clinic info, and more. How can I assist you today? 😊"
+            },
+            {
+                patterns: ["thank", "thanks", "thank you", "dhanyavad", "shukriya", "appreciate"],
+                answer: "You're most welcome! 😊 We're always happy to help. Don't forget — a healthy smile is a confident smile! 🦷✨ Visit us at Swarna Dental Care, Baramunda."
+            },
+            {
+                patterns: ["bye", "goodbye", "see you", "later", "take care", "ok bye"],
+                answer: "Goodbye! 👋 Take care and remember to brush twice daily and floss! We look forward to seeing you at Swarna Dental Care, Baramunda. 😁"
+            }
+        ];
+
+        const QUICK_REPLIES = [
+            { label: "📅 Book Appointment", key: "appointment" },
+            { label: "🦷 Teeth Cleaning", key: "cleaning" },
+            { label: "📍 Location & Hours", key: "location" },
+            { label: "🚨 Emergency", key: "emergency" }
+        ];
+
+        // ── DOM refs ────────────────────────────────────────────
+        const launcher  = document.getElementById('swabootLauncher');
+        const window_   = document.getElementById('swabootWindow');
+        const closeBtn  = document.getElementById('swabootClose');
+        const messages  = document.getElementById('swabootMessages');
+        const input     = document.getElementById('swabootInput');
+        const sendBtn   = document.getElementById('swabootSend');
+        const badge     = document.getElementById('swabootBadge');
+
+        let isOpen   = false;
+        let greeted  = false;
+
+        // ── Toggle ──────────────────────────────────────────────
+        function toggle() {
+            isOpen = !isOpen;
+            window_.classList.toggle('swaboot-visible', isOpen);
+            launcher.classList.toggle('swaboot-open', isOpen);
+            if (isOpen) {
+                badge.style.display = 'none';
+                if (!greeted) { greeted = true; greet(); }
+                setTimeout(() => input.focus(), 300);
+            }
+        }
+
+        launcher.addEventListener('click', toggle);
+        closeBtn.addEventListener('click', toggle);
+
+        // ── Greeting ────────────────────────────────────────────
+        function greet() {
+            addTimestamp();
+            showTyping(1000).then(() => {
+                addBotBubble("Namaste! 🙏 I'm <strong>Swaboot</strong>, your Swarna Dental Care assistant. How can I help you today?", true);
+            });
+        }
+
+        // ── Timestamp ───────────────────────────────────────────
+        function addTimestamp() {
+            const d = document.createElement('div');
+            d.className = 'swaboot-timestamp';
+            d.textContent = new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+            messages.appendChild(d);
+            scroll();
+        }
+
+        // ── Typing indicator ────────────────────────────────────
+        function showTyping(delay = 800) {
+            return new Promise(resolve => {
+                const row = document.createElement('div');
+                row.className = 'swaboot-row swaboot-row-bot';
+                row.id = 'swabootTyping';
+                row.innerHTML = `
+                    <div class="swaboot-bot-icon">🦷</div>
+                    <div class="swaboot-bubble swaboot-bubble-bot swaboot-typing">
+                        <span></span><span></span><span></span>
+                    </div>`;
+                messages.appendChild(row);
+                scroll();
+                setTimeout(() => { row.remove(); resolve(); }, delay + Math.random() * 400);
+            });
+        }
+
+        // ── Bot bubble ──────────────────────────────────────────
+        function addBotBubble(html, showQR = false) {
+            const row = document.createElement('div');
+            row.className = 'swaboot-row swaboot-row-bot';
+            row.innerHTML = `
+                <div class="swaboot-bot-icon">🦷</div>
+                <div class="swaboot-bubble swaboot-bubble-bot">${html}</div>`;
+            messages.appendChild(row);
+
+            if (showQR) {
+                const qrWrap = document.createElement('div');
+                qrWrap.className = 'swaboot-quick-replies';
+                QUICK_REPLIES.forEach(qr => {
+                    const btn = document.createElement('button');
+                    btn.className = 'swaboot-qr-btn';
+                    btn.textContent = qr.label;
+                    btn.addEventListener('click', () => {
+                        qrWrap.remove();
+                        processInput(qr.key);
+                    });
+                    qrWrap.appendChild(btn);
+                });
+                messages.appendChild(qrWrap);
+            }
+            scroll();
+        }
+
+        // ── User bubble ─────────────────────────────────────────
+        function addUserBubble(text) {
+            const row = document.createElement('div');
+            row.className = 'swaboot-row swaboot-row-user';
+            row.innerHTML = `<div class="swaboot-bubble swaboot-bubble-user">${escHtml(text)}</div>
+                             <div class="swaboot-user-icon"><i class="fas fa-user"></i></div>`;
+            messages.appendChild(row);
+            scroll();
+        }
+
+        // ── Match answer ────────────────────────────────────────
+        function getAnswer(text) {
+            const lower = text.toLowerCase();
+            for (const qa of QA) {
+                if (qa.patterns.some(p => lower.includes(p))) return qa.answer;
+            }
+            return "I'm not quite sure about that, but our team is happy to help! 😊<br>📞 Call us: <a href='tel:+918093974393' style='color:var(--primary);font-weight:600'>+91 80939 74393</a> or <a href='https://wa.me/918093974393' target='_blank' style='color:var(--primary);font-weight:600'>WhatsApp us</a>.";
+        }
+
+        // ── Process input ────────────────────────────────────────
+        async function processInput(text) {
+            if (!text.trim()) return;
+            addUserBubble(text);
+            await showTyping();
+            addBotBubble(getAnswer(text));
+        }
+
+        // ── Send ─────────────────────────────────────────────────
+        function handleSend() {
+            const val = input.value.trim();
+            if (!val) return;
+            input.value = '';
+            processInput(val);
+        }
+
+        sendBtn.addEventListener('click', handleSend);
+        input.addEventListener('keydown', e => { if (e.key === 'Enter') handleSend(); });
+
+        // ── Helpers ──────────────────────────────────────────────
+        function scroll() { messages.scrollTop = messages.scrollHeight; }
+        function escHtml(t) {
+            return t.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+        }
+
+        // ── Hint bubble after 3s ─────────────────────────────────
+        setTimeout(() => {
+            if (!isOpen) {
+                badge.style.display = 'flex';
+                const hint = document.createElement('div');
+                hint.className = 'swaboot-hint';
+                hint.innerHTML = '🦷 Hi! Need dental help?';
+                document.body.appendChild(hint);
+                setTimeout(() => hint.remove(), 4000);
+            }
+        }, 3000);
+    })();
+    </script>
 </body>
 </html>
-
-
